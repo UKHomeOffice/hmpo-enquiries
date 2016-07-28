@@ -9,7 +9,7 @@
     }
   },
   "include": {
-    "I": "./steps_file.js"
+    "I": "./steps.js"
   },
   "bootstrap": false,
   "mocha": {},
