@@ -11,7 +11,7 @@ module.exports = {
     },
     '/what-enquiry': {
       fields: ['enquiry-radio'],
-      next: '/track-application',
+      next: '/track-application/apply-online',
       forks: [{
         target: '/replace-declaration',
         condition: {

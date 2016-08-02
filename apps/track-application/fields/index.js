@@ -1,7 +1,16 @@
 'use strict';
 
 module.exports = {
-  'test-text': {
-    mixin: 'input-text'
+  'apply-online-radio': {
+    mixin: 'radio-group',
+    validate: ['required'],
+    className: ['form-group'],
+    options: [{
+      value: 'yes',
+      label: 'Yes'
+    }, {
+      value: 'no',
+      label: 'No'
+    }]
   }
 };

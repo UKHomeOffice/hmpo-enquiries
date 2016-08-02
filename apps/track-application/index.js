@@ -1,10 +1,29 @@
 'use strict';
 
 module.exports = {
-  name: 'track-application',
+  baseUrl: '/track-application',
   steps: {
-    '/track-application': {
-      fields: ['test-text'],
+    '/apply-online': {
+      fields: ['apply-online-radio'],
+      next: '/track-online',
+      forks: [{
+        target: '/whos-application',
+        condition: {
+          field: 'apply-online-radio',
+          value: 'no'
+        }
+      }],
+      backLink: 'what-enquiry',
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/track-online': {
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/whos-application': {
       locals: {
         section: 'track-application'
       }
