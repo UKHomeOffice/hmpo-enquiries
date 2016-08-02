@@ -25,7 +25,7 @@ Scenario('When I select track a passport application and Yes to applying online'
   I.see('Did you apply online?');
   I.checkOption('Yes');
   I.click('Continue');
-  I.amOnPage('/track-application/track-online');
+  I.see('Log into the online passport service for British nationals');
 });
 
 Scenario('When I select track a passport application and No to applying online', (I) => {
