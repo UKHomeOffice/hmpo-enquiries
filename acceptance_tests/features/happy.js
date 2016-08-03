@@ -40,6 +40,36 @@ Scenario('When I select track a passport application and No to applying online',
   I.amOnPage('/track-application/whos-application');
 });
 
+Scenario('When I select track a passport application and My passport application to whose-application', (I) => {
+  I.amOnPage('/');
+  I.see('Type of enquiry');
+  I.checkOption('Track a passport application');
+  I.click('Continue');
+  I.amOnPage('track-application/apply-online');
+  I.see('Did you apply online?');
+  I.checkOption('No');
+  I.click('Continue');
+  I.see('Whose passport application is your enquiry about?');
+  I.checkOption('My passport application');
+  I.click('Continue');
+  I.amOnPage('track-application/your-full-name');
+});
+
+Scenario('When I select track a passport application and Someone else\'s application to whose-application', (I) => {
+  I.amOnPage('/');
+  I.see('Type of enquiry');
+  I.checkOption('Track a passport application');
+  I.click('Continue');
+  I.amOnPage('track-application/apply-online');
+  I.see('Did you apply online?');
+  I.checkOption('No');
+  I.click('Continue');
+  I.see('Whose passport application is your enquiry about?');
+  I.checkOption('Someone else\'s passport application');
+  I.click('Continue');
+  I.amOnPage('track-application/applicants-full-name');
+});
+
 Scenario('When I select replacement declaration form then I am taken to the replacement declaration section', (I) => {
   I.amOnPage('/');
   I.see('Type of enquiry');
