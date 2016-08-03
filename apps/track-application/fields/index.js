@@ -12,5 +12,17 @@ module.exports = {
       value: 'no',
       label: 'No'
     }]
+  },
+  'whose-app-radio': {
+    mixin: 'radio-group',
+    validate: ['required'],
+    className: ['form-group'],
+    options: [{
+      value: 'my application',
+      label: 'My passport application'
+    }, {
+      value: 'someone else\'s',
+      label: 'Someone else\'s passport application'
+    }]
   }
 };

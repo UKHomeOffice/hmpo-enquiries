@@ -7,7 +7,7 @@ module.exports = {
       fields: ['apply-online-radio'],
       next: '/track-online',
       forks: [{
-        target: '/whos-application',
+        target: '/whose-application',
         condition: {
           field: 'apply-online-radio',
           value: 'no'
@@ -23,7 +23,26 @@ module.exports = {
         section: 'track-application'
       }
     },
-    '/whos-application': {
+    '/whose-application': {
+      fields: ['whose-app-radio'],
+      next: '/your-full-name',
+      forks: [{
+        target: '/applicants-full-name',
+        condition: {
+          field: 'whose-app-radio',
+          value: 'someone else\'s'
+        }
+      }],
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/your-full-name': {
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/applicants-full-name': {
       locals: {
         section: 'track-application'
       }

@@ -1,5 +1,8 @@
 {
   "apply-online-radio": {
     "legend": "Did you apply online?"
+  },
+  "whose-app-radio": {
+    "legend": "Whose passport application is your enquiry about?"
   }
 }
