@@ -1,5 +1,7 @@
 'use strict';
 
+const isRep = req => req.sessionModel.get('representative');
+
 module.exports = {
   baseUrl: '/track-application',
   steps: {
@@ -13,7 +15,6 @@ module.exports = {
           value: 'no'
         }
       }],
-      backLink: 'what-enquiry',
       locals: {
         section: 'track-application'
       }
@@ -24,28 +25,52 @@ module.exports = {
       }
     },
     '/whose-application': {
-      fields: ['whose-app-radio'],
-      next: '/your-full-name',
-      forks: [{
-        target: '/applicants-full-name',
-        condition: {
-          field: 'whose-app-radio',
-          value: 'someone else\'s'
-        }
-      }],
-      locals: {
-        section: 'track-application'
-      }
-    },
-    '/your-full-name': {
+      fields: ['representative'],
+      next: '/applicants-full-name',
       locals: {
         section: 'track-application'
       }
     },
     '/applicants-full-name': {
+      fields: ['applicants-full-name'],
+      next: '/ref-number',
       locals: {
         section: 'track-application'
       }
-    }
+    },
+    '/ref-number': {
+      next: '/email-address',
+      forks: [{
+        target: '/address',
+        condition: isRep
+      }]
+    },
+    '/representatives-full-name': {
+      next: '/relationship',
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/applicants-dob': {
+      next: '/representatives-full-name'
+    },
+    '/email-address': {
+      next: '/address',
+      forks: [{
+        target: '/confirm',
+        condition: isRep
+      }]
+    },
+    '/address': {
+      next: '/confirm',
+      forks: [{
+        target: '/applicants-dob',
+        condition: isRep
+      }]
+    },
+    '/relationship': {
+      next: '/email-address'
+    },
+    '/confirm': {}
   }
 };

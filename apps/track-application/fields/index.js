@@ -13,16 +13,20 @@ module.exports = {
       label: 'No'
     }]
   },
-  'whose-app-radio': {
+  'representative': {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['form-group'],
     options: [{
-      value: 'my application',
+      value: 'false',
       label: 'My passport application'
     }, {
-      value: 'someone else\'s',
+      value: 'true',
       label: 'Someone else\'s passport application'
     }]
+  },
+  'applicants-full-name': {
+    mixin: 'input-text',
+    validate: ['required']
   }
 };

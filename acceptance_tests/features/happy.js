@@ -52,7 +52,16 @@ Scenario('When I select track a passport application and My passport application
   I.see('Whose passport application is your enquiry about?');
   I.checkOption('My passport application');
   I.click('Continue');
-  I.amOnPage('track-application/your-full-name');
+  I.see('What\'s your full name?');
+  I.fillField('What\'s your full name?', 'Sterling Archer');
+  I.click('Continue');
+  I.amOnPage('track-application/ref-number');
+  I.click('Continue');
+  I.amOnPage('track-application/email-address');
+  I.click('Continue');
+  I.amOnPage('track-application/address');
+  I.click('Continue');
+  I.amOnPage('track-application/confirm');
 });
 
 Scenario('When I select track a passport application and Someone else\'s application to whose-application', (I) => {
@@ -67,7 +76,22 @@ Scenario('When I select track a passport application and Someone else\'s applica
   I.see('Whose passport application is your enquiry about?');
   I.checkOption('Someone else\'s passport application');
   I.click('Continue');
-  I.amOnPage('track-application/applicants-full-name');
+  I.see('What\'s the applicant\'s full name?');
+  I.fillField('What\'s the applicant\'s full name?', 'Sterling Archer');
+  I.click('Continue');
+  I.amOnPage('track-application/ref-number');
+  I.click('Continue');
+  I.amOnPage('track-application/address');
+  I.click('Continue');
+  I.amOnPage('track-application/applicants-dob');
+  I.click('Continue');
+  I.amOnPage('track-application/representatives-full-name');
+  I.click('Continue');
+  I.amOnPage('track-application/relationship');
+  I.click('Continue');
+  I.amOnPage('track-application/email-address');
+  I.click('Continue');
+  I.amOnPage('track-application/confirm');
 });
 
 Scenario('When I select replacement declaration form then I am taken to the replacement declaration section', (I) => {
