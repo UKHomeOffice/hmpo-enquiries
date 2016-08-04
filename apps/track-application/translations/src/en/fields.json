@@ -18,5 +18,12 @@
       },
       "default": ""
     }
+  },
+  "ref-number-text": {
+    "label": "What is the application reference number?",
+    "hint": "This can be found in the top left on the first page of the application form"
+  },
+  "ref-number-checkbox": {
+    "label": "I don’t know the reference number"
   }
 }

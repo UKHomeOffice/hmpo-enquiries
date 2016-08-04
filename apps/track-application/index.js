@@ -39,11 +39,18 @@ module.exports = {
       }
     },
     '/ref-number': {
+      fields: [
+        'ref-number-text',
+        'ref-number-checkbox'
+      ],
       next: '/email-address',
       forks: [{
         target: '/address',
         condition: isRep
-      }]
+      }],
+      locals: {
+        section: 'track-application'
+      }
     },
     '/representatives-full-name': {
       next: '/relationship',
