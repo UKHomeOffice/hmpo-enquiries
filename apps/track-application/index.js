@@ -1,6 +1,6 @@
 'use strict';
 
-const isRep = req => req.sessionModel.get('representative');
+const isRep = req => req.sessionModel.get('representative') === 'true';
 
 module.exports = {
   baseUrl: '/track-application',
