@@ -62,7 +62,23 @@ module.exports = {
     url: '/track-application/track-online'
   },
   'ref-number': {
-    url: '/track-application/ref-number'
+    url: '/track-application/ref-number',
+    fields: {
+      label: trackTranslations.fields['ref-number-text'].label,
+      id: {
+        'number-input': 'input[type="text"]#ref-number-text',
+        'no-number-checkbox': 'input[type="checkbox"]#ref-number-checkbox'
+      }
+    },
+    text: {
+      'ref-number': '123456789'
+    }
+  },
+  'email-address': {
+    url: '/track-application/email-address'
+  },
+  'address': {
+    url: '/track-application/address'
   },
   'request-declaration': {
     url: '/request-declaration'

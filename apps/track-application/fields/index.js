@@ -28,5 +28,16 @@ module.exports = {
   'applicants-full-name': {
     mixin: 'input-text',
     validate: ['required']
+  },
+  'ref-number-checkbox': {
+    mixin: 'checkbox'
+    },
+  'ref-number-text': {
+    mixin: 'input-text',
+    validate: ['required'],
+    dependent: {
+      field: 'ref-number-checkbox',
+      value: ''
+    }
   }
 };
