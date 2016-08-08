@@ -2,7 +2,21 @@
   "apply-online-radio": {
     "legend": "Did you apply online?"
   },
-  "whose-app-radio": {
+  "representative": {
     "legend": "Whose passport application is your enquiry about?"
+  },
+  "applicants-full-name": {
+    "label": {
+      "representative": {
+        "false": "What's your full name?"
+      },
+      "default": "What's the applicant's full name?"
+    },
+    "hint": {
+      "representative": {
+        "false": "This must be the same as on the application form"
+      },
+      "default": ""
+    }
   }
 }
