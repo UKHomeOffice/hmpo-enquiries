@@ -33,5 +33,14 @@
   },
   "no-ref-number": {
     "label": "I don’t know the reference number"
+  },
+  "email-address": {
+    "label": "What's your email address?",
+    "hint": {
+      "representative": {
+        "false": "This must be the same as on the application form"
+      },
+      "default": ""
+    }
   }
 }
