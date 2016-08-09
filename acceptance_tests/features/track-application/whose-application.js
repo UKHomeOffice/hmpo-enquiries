@@ -2,22 +2,25 @@
 
 const content = require('../../content');
 
-Feature('On the Track application section, the /apply-online step has the correct fields, validation and forking');
+const PAGE = content['whose-application'];
+const REPRESENTATIVE = PAGE.fields.representative;
+
+Feature('Whose Application step');
 
 Before((I) => {
-  I.amOnPage(content['what-enquiry'].url);
-  I.checkOption({id: content['what-enquiry'].fields.id['track-application']});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['apply-online'].url);
-  I.checkOption({id: content['apply-online'].fields.id.no});
-  I.click(content.common.buttons.continue);
-  I.amOnPage('track-application/whose-application');
+  I.amOnPage('/');
+  I.setSessionSteps('track-application', [
+    '/apply-online'
+  ]);
+  I.amOnPage(PAGE.url);
 });
 
 Scenario('The /whose-application step has a radio button field', (I) => {
-  I.see(content['whose-application'].fields.label);
-  I.seeElement({id: content['whose-application'].fields.id['my-application']});
-  I.seeElement({id: content['whose-application'].fields.id['someone-elses-application']});
+  I.see(REPRESENTATIVE.label);
+  I.see(REPRESENTATIVE.options.true.label);
+  I.see(REPRESENTATIVE.options.false.label);
+  I.seeElement(REPRESENTATIVE.options.true.selector);
+  I.seeElement(REPRESENTATIVE.options.false.selector);
 });
 
 Scenario('The /whose-application step shows error message when continuing without selecting an option', (I) => {
@@ -27,7 +30,7 @@ Scenario('The /whose-application step shows error message when continuing withou
 
 // eslint-disable-next-line max-len
 Scenario('When any option is selected on the /apply-online step, you are taken to the /applicants-full-name step', (I) => {
-  I.checkOption({id: content['whose-application'].fields.id['my-application']});
+  I.checkOption(REPRESENTATIVE.options.false.selector);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['applicants-full-name'].url);
+  I.seeInCurrentUrl(content['applicants-full-name'].url);
 });

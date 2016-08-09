@@ -1,5 +1,13 @@
 {
-  "enquiry-radio": {
-    "legend": "What would you like to do?"
+  "enquiry": {
+    "legend": "What would you like to do?",
+    "options": {
+      "track": "Track a passport application",
+      "replace": "Request a replacement declaration form",
+      "progress": "Enquire about a passport application in progress",
+      "enquiry": "Make a passport application enquiry",
+      "feedback": "Make a complaint or leave feedback",
+      "contact": "Contact us"
+    }
   }
 }

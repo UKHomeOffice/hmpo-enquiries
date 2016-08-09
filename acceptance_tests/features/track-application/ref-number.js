@@ -2,60 +2,58 @@
 
 const content = require('../../content');
 
-Feature('On the Track application section, the /ref-number step has the correct fields, validation and forking');
+const PAGE = content['ref-number'];
+const REF_NUMBER = PAGE.fields['ref-number'];
+const NO_REF_NUMBER = PAGE.fields['no-ref-number'];
+
+Feature('Ref Number step');
 
 Before((I) => {
-  I.amOnPage(content['what-enquiry'].url);
-  I.checkOption({id: content['what-enquiry'].fields.id['track-application']});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['apply-online'].url);
-  I.checkOption({id: content['apply-online'].fields.id.no});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['whose-application'].url);
+  I.amOnPage('/');
+  I.setSessionSteps('track-application', [
+    '/apply-online',
+    '/whose-application',
+    '/applicants-full-name'
+  ]);
+  I.amOnPage(PAGE.url);
 });
 
 Scenario('The /ref-number step has a input-text field and checkbox field', (I) => {
-  I.checkOption({id: content['whose-application'].fields.id['my-application']});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['applicants-full-name'].url);
-  I.fillField(content['applicants-full-name'].fields.id, content['applicants-full-name'].text.name);
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['ref-number'].url);
-  I.see(content['ref-number'].fields.label);
-  I.seeElement(content['ref-number'].fields.id['number-input']);
-  I.seeElement(content['ref-number'].fields.id['no-number-checkbox']);
+  I.see(REF_NUMBER.label);
+  I.see(NO_REF_NUMBER.label);
+  I.seeElement(REF_NUMBER.selector);
+  I.seeElement(NO_REF_NUMBER.selector);
 });
 
 Scenario('The /ref-number step shows error message when continuing without filling in the field', (I) => {
-  I.checkOption({id: content['whose-application'].fields.id['my-application']});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['applicants-full-name'].url);
-  I.fillField(content['applicants-full-name'].fields.id, content['applicants-full-name'].text.name);
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['ref-number'].url);
   I.click(content.common.buttons.continue);
   I.see(content.common.error);
 });
 
 // eslint-disable-next-line max-len
-Scenario('The /ref-number step takes you to the /email-address step when My passport is selected in the /whose-application step', (I) => {
-  I.checkOption({id: content['whose-application'].fields.id['my-application']});
+Scenario('The /ref-number step takes you to the /email-address step when My passport is selected in the /whose-application step', function *(I) {
+  yield I.setSessionData('track-application', {
+    representative: 'false'
+  });
+  I.amOnPage(PAGE.url);
+  I.fillField(REF_NUMBER.selector, REF_NUMBER.value);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['applicants-full-name'].url);
-  I.fillField(content['applicants-full-name'].fields.id, content['applicants-full-name'].text.name);
+  I.seeInCurrentUrl(content['email-address'].url);
+});
+
+Scenario('If the no-ref-number checkbox is ticked, you can proceed without entering a ref number', (I) => {
+  I.click(NO_REF_NUMBER.selector);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['ref-number'].url);
-  I.fillField(content['ref-number'].fields.id['number-input'], content['ref-number'].text['ref-number']);
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['email-address'].url);
+  I.seeInCurrentUrl(content['email-address'].url);
 });
 
 // eslint-disable-next-line max-len
-Scenario('The /ref-number step takes you to the /address step when Someone else\'s passport is selected in the /whose-application step', (I) => {
-  I.checkOption({id: content['whose-application'].fields.id['someone-elses-application']});
+Scenario('The /ref-number step takes you to the /address step when Someone else\'s passport is selected in the /whose-application step', function *(I) {
+  yield I.setSessionData('track-application', {
+    representative: 'true'
+  });
+  I.amOnPage(PAGE.url);
+  I.fillField(REF_NUMBER.selector, REF_NUMBER.value);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['applicants-full-name'].url);
-  I.fillField(content['applicants-full-name'].fields.id, content['applicants-full-name'].text.name);
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content.address.url);
+  I.seeInCurrentUrl(content.address.url);
 });

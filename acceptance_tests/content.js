@@ -14,48 +14,85 @@ module.exports = {
     url: '/',
     header: enquiryTranslations.pages['what-enquiry'].header,
     fields: {
-      id: {
-        'track-application': 'enquiry-radio-track',
-        'replace': 'enquiry-radio-replace',
-        'progress': 'enquiry-radio-progress',
-        'enquiry': 'enquiry-radio-enquiry',
-        'feedback': 'enquiry-radio-feedback',
-        'contact': 'enquiry-radio-contact',
+      enquiry: {
+        legend: enquiryTranslations.fields.enquiry.legend,
+        options: {
+          track: {
+            label: enquiryTranslations.fields.enquiry.options.track,
+            selector: '#enquiry-track'
+          },
+          replace: {
+            label: enquiryTranslations.fields.enquiry.options.replace,
+            selector: '#enquiry-replace'
+          },
+          progress: {
+            label: enquiryTranslations.fields.enquiry.options.progress,
+            selector: '#enquiry-progress'
+          },
+          enquiry: {
+            label: enquiryTranslations.fields.enquiry.options.enquiry,
+            selector: '#enquiry-enquiry'
+          },
+          feedback: {
+            label: enquiryTranslations.fields.enquiry.options.feedback,
+            selector: '#enquiry-feedback'
+          },
+          contact: {
+            label: enquiryTranslations.fields.enquiry.options.contact,
+            selector: '#enquiry-contact'
+          }
+        }
       }
     }
   },
   'apply-online': {
     url: '/track-application/apply-online',
     fields: {
-      label: trackTranslations.fields['apply-online-radio'].legend,
-      id: {
-        'no': 'apply-online-radio-no',
-        'yes': 'apply-online-radio-yes'
+      'apply-online': {
+        label: trackTranslations.fields['apply-online'].legend,
+        options: {
+          yes: {
+            label: trackTranslations.fields['apply-online'].options.yes,
+            selector: '#apply-online-yes'
+          },
+          no: {
+            label: trackTranslations.fields['apply-online'].options.no,
+            selector: '#apply-online-no'
+          }
+        }
       }
     }
   },
   'whose-application': {
     url: '/track-application/whose-application',
     fields: {
-      label: trackTranslations.fields.representative.legend,
-      id: {
-        'my-application': 'representative-false',
-        'someone-elses-application': 'representative-true'
+      representative: {
+        label: trackTranslations.fields.representative.legend,
+        options: {
+          'true': {
+            label: trackTranslations.fields.representative.options.true,
+            selector: '#representative-true'
+          },
+          'false': {
+            label: trackTranslations.fields.representative.options.false,
+            selector: '#representative-false'
+          }
+        }
       }
     }
   },
   'applicants-full-name': {
     url: '/track-application/applicants-full-name',
     fields: {
-      label: {
-        'rep': trackTranslations.fields['applicants-full-name'].label.default,
-        'no-rep': trackTranslations.fields['applicants-full-name'].label.representative.false
-      },
-      hint: trackTranslations.fields['applicants-full-name'].hint.representative.false,
-      id: 'input[type="text"]#applicants-full-name'
-    },
-    text: {
-      name: 'Sterling Archer'
+      'applicants-full-name': {
+        label: {
+          'rep': trackTranslations.fields['applicants-full-name'].label.default,
+          'no-rep': trackTranslations.fields['applicants-full-name'].label.representative.false
+        },
+        hint: trackTranslations.fields['applicants-full-name'].hint.representative.false,
+        selector: '#applicants-full-name',
+        value: 'Sterling Archer'
+      }
     }
   },
   'track-online': {
@@ -64,14 +101,15 @@ module.exports = {
   'ref-number': {
     url: '/track-application/ref-number',
     fields: {
-      label: trackTranslations.fields['ref-number-text'].label,
-      id: {
-        'number-input': 'input[type="text"]#ref-number-text',
-        'no-number-checkbox': 'input[type="checkbox"]#ref-number-checkbox'
+      'ref-number': {
+        label: trackTranslations.fields['ref-number'].label,
+        value: '123456789',
+        selector: '#ref-number'
+      },
+      'no-ref-number': {
+        label: trackTranslations.fields['no-ref-number'].label,
+        selector: '#no-ref-number'
       }
-    },
-    text: {
-      'ref-number': '123456789'
     }
   },
   'email-address': {
