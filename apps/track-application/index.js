@@ -62,11 +62,15 @@ module.exports = {
       next: '/representatives-full-name'
     },
     '/email-address': {
+      fields: ['email-address'],
       next: '/address',
       forks: [{
         target: '/confirm',
         condition: isRep
-      }]
+      }],
+      locals: {
+        section: 'track-application'
+      }
     },
     '/address': {
       next: '/confirm',

@@ -39,5 +39,9 @@ module.exports = {
       field: 'ref-number-checkbox',
       value: ''
     }
+  },
+  'email-address': {
+    mixin: 'input-text',
+    validate: ['required', 'email']
   }
 };

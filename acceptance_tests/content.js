@@ -75,10 +75,31 @@ module.exports = {
     }
   },
   'email-address': {
-    url: '/track-application/email-address'
+    url: '/track-application/email-address',
+    fields: {
+      label: trackTranslations.fields['email-address'].label,
+      hint: trackTranslations.fields['email-address'].hint.representative.false,
+      id: 'input[type="text"]#email-address'
+    },
+    text: {
+      'invalid-email': 'this is an email',
+      'valid-email': 'email@email.com'
+    }
   },
   'address': {
     url: '/track-application/address'
+  },
+  'applicants-dob': {
+    url: '/track-application/applicants-dob'
+  },
+  'representatives-full-name': {
+    url: '/track-application/representatives-full-name'
+  },
+  'relationship': {
+    url: '/track-application/relationship'
+  },
+  'confirm': {
+    url: '/track-application/confirm'
   },
   'request-declaration': {
     url: '/request-declaration'
