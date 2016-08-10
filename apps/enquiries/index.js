@@ -10,36 +10,36 @@ module.exports = {
       next: '/what-enquiry'
     },
     '/what-enquiry': {
-      fields: ['enquiry-radio'],
+      fields: ['enquiry'],
       next: '/track-application/apply-online',
       forks: [{
-        target: '/replace-declaration',
+        target: '/request-declaration',
         condition: {
-          field: 'enquiry-radio',
+          field: 'enquiry',
           value: 'replace'
         }
       }, {
         target: '/application-progress',
         condition: {
-          field: 'enquiry-radio',
+          field: 'enquiry',
           value: 'progress'
         }
       }, {
         target: '/application-enquiry',
         condition: {
-          field: 'enquiry-radio',
+          field: 'enquiry',
           value: 'enquiry'
         }
       }, {
         target: '/feedback',
         condition: {
-          field: 'enquiry-radio',
+          field: 'enquiry',
           value: 'feedback'
         }
       }, {
         target: '/contact-us',
         condition: {
-          field: 'enquiry-radio',
+          field: 'enquiry',
           value: 'contact'
         }
       }],

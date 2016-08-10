@@ -1,12 +1,12 @@
 'use strict';
 
 module.exports = {
-  name: 'replace-declaration',
+  name: 'request-declaration',
   steps: {
-    '/replace-declaration': {
+    '/request-declaration': {
       fields: ['test-text'],
       locals: {
-        section: 'replace-declaration'
+        section: 'request-declaration'
       }
     }
   }

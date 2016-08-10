@@ -1,29 +1,28 @@
 'use strict';
 
 module.exports = {
-  'enquiry-radio': {
+  'enquiry': {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['form-group'],
     options: [{
       value: 'track',
-      label: 'Track a passport application'
+      label: 'fields.enquiry.options.track'
     }, {
       value: 'replace',
-      label: 'Request a replacement declaration form'
+      label: 'fields.enquiry.options.replace'
     }, {
       value: 'progress',
-      label: 'Enquire about a passport application in progress'
+      label: 'fields.enquiry.options.progress'
     }, {
       value: 'enquiry',
-      label: 'Make a passport application enquiry'
+      label: 'fields.enquiry.options.enquiry'
     }, {
       value: 'feedback',
-      label: 'Make a complaint or leave feedback'
+      label: 'fields.enquiry.options.feedback'
     }, {
       value: 'contact',
-      label: 'Contact us'
+      label: 'fields.enquiry.options.contact'
     }]
   }
 };
-

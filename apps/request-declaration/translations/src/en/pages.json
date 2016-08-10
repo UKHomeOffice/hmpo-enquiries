@@ -1,5 +1,5 @@
 {
-  "replace-declaration": {
+  "request-declaration": {
     "header": "Request a replacement declaration form"
   }
 }

@@ -2,19 +2,22 @@
 
 const content = require('../../content');
 
-Feature('On the Track application section, the /apply-online step has the correct fields, validation and forking');
+const PAGE = content['apply-online'];
+const APPLY_ONLINE = PAGE.fields['apply-online'];
+
+Feature('Apply online step');
 
 Before((I) => {
-  I.amOnPage(content['what-enquiry'].url);
-  I.checkOption({id: content['what-enquiry'].fields.id['track-application']});
-  I.click(content.common.buttons.continue);
-  I.amOnPage(content['apply-online'].url);
+  I.amOnPage('/');
+  I.amOnPage(PAGE.url);
 });
 
 Scenario('The /apply-online step has a radio button field', (I) => {
-  I.see(content['apply-online'].fields.label);
-  I.seeElement({id: content['apply-online'].fields.id.yes});
-  I.seeElement({id: content['apply-online'].fields.id.no});
+  I.see(APPLY_ONLINE.label);
+  I.see(APPLY_ONLINE.options.yes.label);
+  I.see(APPLY_ONLINE.options.no.label);
+  I.seeElement(APPLY_ONLINE.options.yes.selector);
+  I.seeElement(APPLY_ONLINE.options.no.selector);
 });
 
 Scenario('The /apply-online step shows error message when continuing without selecting an option', (I) => {
@@ -23,13 +26,13 @@ Scenario('The /apply-online step shows error message when continuing without sel
 });
 
 Scenario('When Yes is selected on the /apply-online step, you are taken to the /track-online step', (I) => {
-  I.checkOption({id: content['apply-online'].fields.id.yes});
+  I.checkOption(APPLY_ONLINE.options.yes.selector);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['track-online'].url);
+  I.seeInCurrentUrl(content['track-online'].url);
 });
 
 Scenario('When No is selected on the /apply-online step, you are taken to the /whose-application step', (I) => {
-  I.checkOption({id: content['apply-online'].fields.id.no});
+  I.checkOption(APPLY_ONLINE.options.no.selector);
   I.click(content.common.buttons.continue);
-  I.amOnPage(content['whose-application'].url);
+  I.seeInCurrentUrl(content['whose-application'].url);
 });

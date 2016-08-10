@@ -1,16 +1,16 @@
 'use strict';
 
 module.exports = {
-  'apply-online-radio': {
+  'apply-online': {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['form-group'],
     options: [{
       value: 'yes',
-      label: 'Yes'
+      label: 'fields.apply-online.options.yes'
     }, {
       value: 'no',
-      label: 'No'
+      label: 'fields.apply-online.options.no'
     }]
   },
   'representative': {
@@ -19,24 +19,24 @@ module.exports = {
     className: ['form-group'],
     options: [{
       value: 'false',
-      label: 'My passport application'
+      label: 'fields.representative.options.false'
     }, {
       value: 'true',
-      label: 'Someone else\'s passport application'
+      label: 'fields.representative.options.true'
     }]
   },
   'applicants-full-name': {
     mixin: 'input-text',
     validate: ['required']
   },
-  'ref-number-checkbox': {
+  'no-ref-number': {
     mixin: 'checkbox'
-    },
-  'ref-number-text': {
+  },
+  'ref-number': {
     mixin: 'input-text',
     validate: ['required'],
     dependent: {
-      field: 'ref-number-checkbox',
+      field: 'no-ref-number',
       value: ''
     }
   }

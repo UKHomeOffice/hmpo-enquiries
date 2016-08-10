@@ -6,12 +6,12 @@ module.exports = {
   baseUrl: '/track-application',
   steps: {
     '/apply-online': {
-      fields: ['apply-online-radio'],
+      fields: ['apply-online'],
       next: '/track-online',
       forks: [{
         target: '/whose-application',
         condition: {
-          field: 'apply-online-radio',
+          field: 'apply-online',
           value: 'no'
         }
       }],
@@ -40,8 +40,8 @@ module.exports = {
     },
     '/ref-number': {
       fields: [
-        'ref-number-text',
-        'ref-number-checkbox'
+        'ref-number',
+        'no-ref-number'
       ],
       next: '/email-address',
       forks: [{
