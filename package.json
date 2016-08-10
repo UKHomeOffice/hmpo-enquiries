@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "codeceptjs": "^0.4.0",
+    "codeceptjs": "Codeception/CodeceptJS#59ef1008b6a97347147385dc22188db651c8e733",
     "jscs": "^3.0.6",
     "mocha": "^2.2.5",
     "mocha-junit-reporter": "^1.4.0",
