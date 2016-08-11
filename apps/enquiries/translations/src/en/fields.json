@@ -1,5 +1,5 @@
 {
-  "enquiry": {
+  "enquiry-type": {
     "legend": "What would you like to do?",
     "options": {
       "track": "Track a passport application",

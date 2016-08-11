@@ -7,39 +7,39 @@ module.exports = {
   steps: {
     '/': {
       controller: controllers.start,
-      next: '/what-enquiry'
+      next: '/enquiry-type'
     },
-    '/what-enquiry': {
-      fields: ['enquiry'],
+    '/enquiry-type': {
+      fields: ['enquiry-type'],
       next: '/track-application/apply-online',
       forks: [{
         target: '/request-declaration',
         condition: {
-          field: 'enquiry',
+          field: 'enquiry-type',
           value: 'replace'
         }
       }, {
         target: '/application-progress',
         condition: {
-          field: 'enquiry',
+          field: 'enquiry-type',
           value: 'progress'
         }
       }, {
         target: '/application-enquiry',
         condition: {
-          field: 'enquiry',
+          field: 'enquiry-type',
           value: 'enquiry'
         }
       }, {
         target: '/feedback',
         condition: {
-          field: 'enquiry',
+          field: 'enquiry-type',
           value: 'feedback'
         }
       }, {
         target: '/contact-us',
         condition: {
-          field: 'enquiry',
+          field: 'enquiry-type',
           value: 'contact'
         }
       }],
