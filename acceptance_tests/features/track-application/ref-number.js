@@ -1,59 +1,73 @@
 'use strict';
 
-const content = require('../../content');
+const JOURNEY_NAME = require('./content').name;
 
-const PAGE = content['ref-number'];
-const REF_NUMBER = PAGE.fields['ref-number'];
-const NO_REF_NUMBER = PAGE.fields['no-ref-number'];
+Feature('Track Application / Ref Number');
 
-Feature('Ref Number step');
-
-Before((I) => {
-  I.amOnPage('/');
-  I.setSessionSteps('track-application', [
-    '/apply-online',
-    '/whose-application',
-    '/applicants-full-name'
+Before((
+  I,
+  refNumberPage,
+  applyOnlinePage,
+  whoseApplicationPage,
+  applicantsFullNamePage
+) => {
+  I.visitPage(refNumberPage, JOURNEY_NAME, [
+    applyOnlinePage,
+    whoseApplicationPage,
+    applicantsFullNamePage
   ]);
-  I.amOnPage(PAGE.url);
 });
 
-Scenario('The /ref-number step has a input-text field and checkbox field', (I) => {
-  I.see(REF_NUMBER.label);
-  I.see(NO_REF_NUMBER.label);
-  I.seeElement(REF_NUMBER.selector);
-  I.seeElement(NO_REF_NUMBER.selector);
+Scenario('The correct form elements are present', (
+  I,
+  refNumberPage
+) => {
+  I.seeElements([
+    refNumberPage['ref-number'],
+    refNumberPage['no-ref-number']
+  ]);
 });
 
-Scenario('The /ref-number step shows error message when continuing without filling in the field', (I) => {
-  I.click(content.common.buttons.continue);
-  I.see(content.common.error);
+Scenario('An error is shown if ref-number is not completed', (
+  I,
+  refNumberPage
+) => {
+  I.submitForm();
+  I.seeErrors(refNumberPage['ref-number']);
 });
 
-// eslint-disable-next-line max-len
-Scenario('The /ref-number step takes you to the /email-address step when My passport is selected in the /whose-application step', function *(I) {
-  yield I.setSessionData('track-application', {
+Scenario('An error is not shown if ref-number is not completed and no-ref-number is ticked', (
+  I,
+  refNumberPage,
+  emailAddressPage
+) => {
+  I.click(refNumberPage['no-ref-number']);
+  I.submitForm();
+  I.seeInCurrentUrl(emailAddressPage.url);
+});
+
+Scenario('I am taken to the email-address step if I am the customer', function *(
+  I,
+  refNumberPage,
+  emailAddressPage
+) {
+  yield I.setSessionData(JOURNEY_NAME, {
     representative: 'false'
   });
-  I.amOnPage(PAGE.url);
-  I.fillField(REF_NUMBER.selector, REF_NUMBER.value);
-  I.click(content.common.buttons.continue);
-  I.seeInCurrentUrl(content['email-address'].url);
+  I.refreshPage();
+  refNumberPage.fillFormAndSubmit();
+  I.seeInCurrentUrl(emailAddressPage.url);
 });
 
-Scenario('If the no-ref-number checkbox is ticked, you can proceed without entering a ref number', (I) => {
-  I.click(NO_REF_NUMBER.selector);
-  I.click(content.common.buttons.continue);
-  I.seeInCurrentUrl(content['email-address'].url);
-});
-
-// eslint-disable-next-line max-len
-Scenario('The /ref-number step takes you to the /address step when Someone else\'s passport is selected in the /whose-application step', function *(I) {
-  yield I.setSessionData('track-application', {
+Scenario('I am taken to the address step if I am the representative', function *(
+  I,
+  refNumberPage,
+  addressPage
+) {
+  yield I.setSessionData(JOURNEY_NAME, {
     representative: 'true'
   });
-  I.amOnPage(PAGE.url);
-  I.fillField(REF_NUMBER.selector, REF_NUMBER.value);
-  I.click(content.common.buttons.continue);
-  I.seeInCurrentUrl(content.address.url);
+  I.refreshPage();
+  refNumberPage.fillFormAndSubmit();
+  I.seeInCurrentUrl(addressPage.url);
 });

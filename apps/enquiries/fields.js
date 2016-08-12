@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  'enquiry': {
+  'enquiry-type': {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['form-group'],

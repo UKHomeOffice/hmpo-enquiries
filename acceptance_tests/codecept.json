@@ -8,11 +8,25 @@
       "browser": "phantomjs"
     },
     "Session": {
-      "require": "./session-helper"
+      "require": "./helpers/session"
+    },
+    "Navigation": {
+      "require": "./helpers/navigation"
     }
   },
   "bootstrap": "./setup.js",
   "teardown": "./teardown.js",
   "mocha": {},
-  "name": "hmpo-enquiries"
+  "name": "hmpo-enquiries",
+  "include": {
+    "I": "./steps.js",
+    "applyOnlinePage": "./pages/apply-online.js",
+    "trackOnlinePage": "./pages/track-online.js",
+    "whoseApplicationPage": "./pages/whose-application.js",
+    "applicantsFullNamePage": "./pages/applicants-full-name.js",
+    "refNumberPage": "./pages/ref-number.js",
+    "emailAddressPage": "./pages/email-address.js",
+    "addressPage": "./pages/address.js",
+    "enquiryTypePage": "./pages/enquiry-type.js"
+  }
 }

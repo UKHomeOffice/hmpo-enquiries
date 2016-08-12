@@ -2,12 +2,12 @@
 
 'use strict';
 
-const session = require('./session');
+const session = require('../session');
 
 const SESSION_ID = 'fakeId';
 const SESSION_KEY = 'hmpo-wizard';
 
-class Session extends Helper {
+module.exports = class Session extends Helper {
 
   _getSession() {
     return new Promise((resolve, reject) => {
@@ -63,6 +63,4 @@ class Session extends Helper {
       });
     });
   }
-}
-
-module.exports = Session;
+};
