@@ -12,7 +12,7 @@
   "readme": "./README.md",
   "scripts": {
     "start": "node .",
-    "codecept": "codeceptjs run ./acceptance_tests --steps",
+    "codecept": "./node_modules/hof-acceptance/node_modules/.bin/codeceptjs run ./node_modules/hof-acceptance --steps",
     "dev": "npm-run-all --parallel watch:app watch:scss watch:js watch:translations",
     "watch:app": "NODE_ENV=development nodemon .",
     "watch:scss": "nodemon -e scss -x 'npm run sass'",
