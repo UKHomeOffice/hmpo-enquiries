@@ -12,7 +12,7 @@
   "readme": "./README.md",
   "scripts": {
     "start": "node .",
-    "codecept": "./node_modules/hof-acceptance/node_modules/.bin/codeceptjs run ./node_modules/hof-acceptance --steps",
+    "codecept": "codeceptjs run ./node_modules/so-acceptance --steps",
     "dev": "npm-run-all --parallel watch:app watch:scss watch:js watch:translations",
     "watch:app": "NODE_ENV=development nodemon .",
     "watch:scss": "nodemon -e scss -x 'npm run sass'",
@@ -40,8 +40,7 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "codeceptjs": "^0.4.3",
-    "express-session": "^1.14.0",
+    "hof-acceptance": "UKHomeOffice/hof-acceptance",
     "jscs": "^3.0.6",
     "mocha": "^2.2.5",
     "mocha-junit-reporter": "^1.4.0",

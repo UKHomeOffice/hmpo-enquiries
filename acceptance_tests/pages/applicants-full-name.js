@@ -8,7 +8,7 @@ let I;
 module.exports = {
 
   _init() {
-    I = require('../steps')();
+    I = require('hof-acceptance/steps')();
   },
 
   url: 'applicants-full-name',
