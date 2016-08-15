@@ -2,7 +2,7 @@
 
 const bootstrap = require('hof-bootstrap');
 
-const mockSessionStore = require('./acceptance_tests/session');
+const mockSessionStore = require('hof-acceptance/mock-session');
 const config = require('./config');
 
 const CI = config.env === 'ci';
