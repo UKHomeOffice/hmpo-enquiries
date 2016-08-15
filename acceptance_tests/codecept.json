@@ -27,6 +27,7 @@
     "refNumberPage": "./pages/ref-number.js",
     "emailAddressPage": "./pages/email-address.js",
     "addressPage": "./pages/address.js",
-    "enquiryTypePage": "./pages/enquiry-type.js"
+    "enquiryTypePage": "./pages/enquiry-type.js",
+    "confirmPage": "./pages/confirm.js"
   }
 }
