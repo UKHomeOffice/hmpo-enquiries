@@ -7,22 +7,22 @@ module.exports = {
     className: ['form-group'],
     options: [{
       value: 'track',
-      label: 'fields.enquiry.options.track'
+      label: 'fields.enquiry-type.options.track'
     }, {
       value: 'replace',
-      label: 'fields.enquiry.options.replace'
+      label: 'fields.enquiry-type.options.replace'
     }, {
       value: 'progress',
-      label: 'fields.enquiry.options.progress'
+      label: 'fields.enquiry-type.options.progress'
     }, {
       value: 'enquiry',
-      label: 'fields.enquiry.options.enquiry'
+      label: 'fields.enquiry-type.options.enquiry'
     }, {
       value: 'feedback',
-      label: 'fields.enquiry.options.feedback'
+      label: 'fields.enquiry-type.options.feedback'
     }, {
       value: 'contact',
-      label: 'fields.enquiry.options.contact'
+      label: 'fields.enquiry-type.options.contact'
     }]
   }
 };
