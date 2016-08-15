@@ -39,5 +39,9 @@ module.exports = {
       field: 'no-ref-number',
       value: ''
     }
+  },
+  'email-address': {
+    mixin: 'input-text',
+    validate: ['required', 'email']
   }
 };
