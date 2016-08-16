@@ -1,8 +1,5 @@
 'use strict';
 
-const TRANSLATIONS = require('../../apps/track-application/translations/en/default');
-const EMAIL_ADDRESS = TRANSLATIONS.fields['email-address'];
-
 let I;
 
 module.exports = {
@@ -13,7 +10,6 @@ module.exports = {
 
   url: 'email-address',
   'email-address': '#email-address',
-  hint: EMAIL_ADDRESS.hint.representative.false,
   content: {
     invalid: 'invalid email',
     valid: 'email@email.com'

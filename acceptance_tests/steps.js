@@ -44,6 +44,14 @@ module.exports = () => {
       });
     },
 
+    seeHint(field) {
+      this.seeElement(`${field}-hint`);
+    },
+
+    dontSeeHint(field) {
+      this.dontSeeElement(`${field}-hint`);
+    },
+
     seeElements(selectors) {
       if (!Array.isArray(selectors)) {
         selectors = [selectors];

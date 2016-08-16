@@ -2,13 +2,7 @@
 
 const bootstrap = require('hof-bootstrap');
 
-const mockSessionStore = require('./acceptance_tests/session');
-const config = require('./config');
-
-const CI = config.env === 'ci';
-
 module.exports = bootstrap({
-  sessionStore: CI ? mockSessionStore : null,
   views: false,
   fields: false,
   routes: [

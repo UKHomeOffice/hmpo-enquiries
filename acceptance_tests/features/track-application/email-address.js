@@ -37,8 +37,8 @@ Scenario('I see the hint if I am the customer', function *(
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'false'
   });
-  I.refreshPage();
-  I.see(emailAddressPage.hint);
+  yield I.refreshPage();
+  I.seeHint(emailAddressPage['email-address']);
 });
 
 Scenario('I dont\'t see the hint if I am the customer', function *(
@@ -48,8 +48,8 @@ Scenario('I dont\'t see the hint if I am the customer', function *(
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'true'
   });
-  I.refreshPage();
-  I.dontSee(emailAddressPage.hint);
+  yield I.refreshPage();
+  I.dontSeeHint(emailAddressPage['email-address']);
 });
 
 Scenario('An error is shown if email-address is not completed', (
@@ -76,7 +76,7 @@ Scenario('I am taken to the address step if I am a customer', function *(
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'false'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   emailAddressPage.fillFormAndSubmit(emailAddressPage.content.valid);
   I.seeInCurrentUrl(addressPage.url);
 });

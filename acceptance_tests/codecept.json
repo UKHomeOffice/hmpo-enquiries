@@ -14,8 +14,6 @@
       "require": "./helpers/navigation"
     }
   },
-  "bootstrap": "./setup.js",
-  "teardown": "./teardown.js",
   "mocha": {},
   "name": "hmpo-enquiries",
   "include": {
