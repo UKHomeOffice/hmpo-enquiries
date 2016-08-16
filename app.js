@@ -2,6 +2,8 @@
 
 const _ = require('lodash');
 const bootstrap = require('hof-bootstrap');
+const config = require('./config.js');
+const mockPostcode = require('./mock-postcode.js');
 
 const routes = [
   require('./apps/enquiries/'),
@@ -13,18 +15,24 @@ const routes = [
   require('./apps/contact-us')
 ];
 
-// eslint-disable-next-line no-process-env
-if (process.env.NODE_ENV === 'ci') {
-  routes.unshift({
+const options = {
+  views: './apps/common/views',
+  fields: './apps/common/fields',
+  routes
+};
+
+if (config.env === 'ci') {
+  options.routes.unshift({
     name: 'common',
+    params: '/:action?',
     steps: _.mapValues(Object.assign({}, require('./apps/common'), {
       '/empty': {}
     }), value => Object.assign(value, {next: '/blank'}))
   });
+
+  options.middleware = [
+    mockPostcode
+  ];
 }
 
-module.exports = bootstrap({
-  views: false,
-  fields: './apps/common/fields',
-  routes
-});
+bootstrap(options);

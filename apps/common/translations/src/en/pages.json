@@ -1,0 +1,24 @@
+{
+  "address": {
+    "header": {
+      "representative": {
+        "false": "What's your full address?"
+      },
+      "default": "What's the applicant's full address?"
+    },
+    "edit": "Change",
+    "cantfind": {
+      "representative": {
+        "false": "I can't find my address in the list"
+      },
+      "default": "I can't find the address in the list"
+    },
+    "postcode-api": {
+      "not-found": "Sorry – we couldn’t find any addresses for that postcode, enter your address manually",
+      "cant-connect": "Sorry – we couldn’t connect to the postcode lookup service at this time, enter your address manually"
+    }
+  },
+  "postcode": {
+    "manual": "Enter address manually"
+  }
+}

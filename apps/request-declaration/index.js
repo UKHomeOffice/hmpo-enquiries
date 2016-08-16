@@ -43,7 +43,7 @@ module.exports = {
           return !isPost(req) && !isRep(req);
         }
       }, {
-        target: '/address',
+        target: '/postcode',
         condition(req) {
           return isPost(req) && !isRep(req);
         }
@@ -59,7 +59,7 @@ module.exports = {
         section: 'request-declaration'
       }
     },
-    '/address': {
+    '/postcode': {
     },
     '/applicants-dob': {
       next: '/representatives-full-name',
@@ -76,7 +76,7 @@ module.exports = {
     '/relationship': {
       next: '/email-address',
       forks: [{
-        target: '/address',
+        target: '/postcode',
         condition: isPost
       }],
       locals: {
