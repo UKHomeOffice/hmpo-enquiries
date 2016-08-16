@@ -83,7 +83,13 @@ module.exports = {
       }]
     },
     '/relationship': {
-      next: '/email-address'
+      fields: [
+        'relationship'
+      ],
+      next: '/email-address',
+      locals: {
+        section: 'track-application'
+      }
     },
     '/confirm': {}
   }
