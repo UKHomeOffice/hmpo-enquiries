@@ -43,5 +43,9 @@ module.exports = {
   'email-address': {
     mixin: 'input-text',
     validate: ['required', 'email']
+  },
+  'representatives-full-name': {
+    mixin: 'input-text',
+    validate: ['required']
   }
 };
