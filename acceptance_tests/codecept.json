@@ -27,6 +27,9 @@
     "refNumberPage": "./pages/ref-number.js",
     "emailAddressPage": "./pages/email-address.js",
     "addressPage": "./pages/address.js",
+    "applicantsDobPage": "./pages/applicants-dob.js",
+    "repsFullNamePage": "./pages/representatives-full-name.js",
+    "relationshipPage": "./pages/relationship.js",
     "enquiryTypePage": "./pages/enquiry-type.js",
     "confirmPage": "./pages/confirm.js"
   }

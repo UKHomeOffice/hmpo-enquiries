@@ -42,5 +42,8 @@
       },
       "default": ""
     }
+  },
+  "representatives-full-name": {
+    "label": "What's your full name?"
   }
 }
