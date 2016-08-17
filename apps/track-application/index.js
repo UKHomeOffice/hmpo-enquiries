@@ -62,7 +62,17 @@ module.exports = {
       }
     },
     '/applicants-dob': {
-      next: '/representatives-full-name'
+      controller: require('./controllers/applicants-dob'),
+      fields: [
+        'dob',
+        'dob-day',
+        'dob-month',
+        'dob-year'
+      ],
+      next: '/representatives-full-name',
+      locals: {
+        section: 'track-application'
+      }
     },
     '/email-address': {
       fields: ['email-address'],

@@ -14,7 +14,7 @@ module.exports = {
     refNumberPage: relative('./pages/ref-number.js'),
     emailAddressPage: relative('./pages/email-address.js'),
     addressPage: relative('./pages/address.js'),
-    applicantsDobPage: relative('./pages/applicants-dob.js'),
+    applicantsDOBPage: relative('./pages/applicants-dob.js'),
     repsFullNamePage: relative('./pages/representatives-full-name.js'),
     relationshipPage: relative('./pages/relationship.js'),
     enquiryTypePage: relative('./pages/enquiry-type.js'),
