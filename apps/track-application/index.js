@@ -91,6 +91,14 @@ module.exports = {
         section: 'track-application'
       }
     },
-    '/confirm': {}
+    '/confirm': {
+      controller: require('hof').controllers.confirm,
+      next: '/confirmation',
+      config: require('./confirm-step-config'),
+      locals: {
+        section: 'track-application'
+      }
+    },
+    '/confirmation': {}
   }
 };

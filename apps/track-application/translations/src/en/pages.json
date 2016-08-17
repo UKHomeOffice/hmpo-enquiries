@@ -5,5 +5,20 @@
   "track-online" : {
     "online-application": "If you made your passport application online, you can track the progress by logging into the account you created.",
     "track-link": "Log into the online passport service for British nationals"
+  },
+  "confirm": {
+    "table": {
+      "headers": {
+        "track-application": "Check these details before submitting your tracking request",
+        "applicants-full-name": {
+          "representative": {
+            "false": "What's your full name?"
+          },
+          "default": "What's the applicant's full name?"
+        },
+        "ref-number": "What is the application reference number?",
+        "email-address": "What is your email address?"
+      }
+    }
   }
 }
