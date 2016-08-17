@@ -47,5 +47,9 @@ module.exports = {
   'representatives-full-name': {
     mixin: 'input-text',
     validate: ['required']
+  },
+  'relationship': {
+    mixin: 'input-text',
+    validate: ['required']
   }
 };
