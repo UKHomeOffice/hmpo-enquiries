@@ -1,0 +1,26 @@
+{{<partials-page}}
+  {{$page-content}}
+    <div class="alert-complete" role="alert">
+      <span class="icon icon-complete" role="presentation"></span>
+      <div class="alert-message">
+        <h1>{{#t}}pages.confirmation.content.header{{/t}}</h1>
+      </div>
+    </div>
+    <p>{{#t}}pages.confirmation.content.privacy-policy.secure-data{{/t}} <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/286301/Privacy_Policy_28.2.14.pdf">{{#t}}pages.confirmation.content.privacy-policy.link{{/t}}</a></p>
+    <hr>
+    <p>{{#t}}pages.confirmation.content.copy-sent{{/t}} <strong>{{values.email-address}}</strong></p>
+    <hr>
+    <div>
+      <h2>{{#t}}pages.confirmation.content.whats-next{{/t}}</h2>
+      <p>{{#t}}pages.confirmation.content.respond{{/t}}</p>
+      <p>{{#t}}pages.confirmation.content.get-back{{/t}}</p>
+      <!--{{#representatives-full-name}}-->
+        <!--<p>{{#t}}pages.confirmation.content.what-to-do.representative{/t}}</p>-->
+      <!--{{/representatives-full-name}}-->
+      <!--{{^representatives-full-name}}-->
+        <!--<p>{{#t}}pages.confirmation.content.what-to-do.customer{{/t}}</p>-->
+      <!--{{/representatives-full-name}}-->
+    </div>
+    <hr>
+  {{/page-content}}
+{{/partials-page}}

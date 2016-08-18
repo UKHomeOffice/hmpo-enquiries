@@ -91,6 +91,15 @@ module.exports = {
         section: 'track-application'
       }
     },
-    '/confirm': {}
+    '/confirm': {
+      next: '/confirmation'
+    },
+    '/confirmation': {
+      backLink: false,
+      clearSession: true,
+      locals: {
+        section: 'confirmation'
+      }
+    }
   }
 };
