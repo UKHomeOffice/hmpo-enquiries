@@ -8,7 +8,7 @@ let I;
 module.exports = {
 
   _init() {
-    I = require('../steps')();
+    I = require('so-acceptance/steps')();
   },
 
   url: 'representatives-full-name',

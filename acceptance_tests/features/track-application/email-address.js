@@ -89,7 +89,7 @@ Scenario('I am taken to the confirm step if I am a representative', function *(
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'true'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   emailAddressPage.fillFormAndSubmit(emailAddressPage.content.valid);
   I.seeInCurrentUrl(confirmPage.url);
 });
