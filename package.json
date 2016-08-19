@@ -12,7 +12,7 @@
   "readme": "./README.md",
   "scripts": {
     "start": "node .",
-    "codecept": "codeceptjs run ./acceptance_tests --steps",
+    "codecept": "codeceptjs run ./node_modules/so-acceptance --steps",
     "dev": "npm-run-all --parallel watch:app watch:scss watch:js watch:translations",
     "watch:app": "NODE_ENV=development nodemon .",
     "watch:scss": "nodemon -e scss -x 'npm run sass'",
@@ -40,21 +40,18 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "codeceptjs": "^0.4.3",
-    "express-session": "^1.14.0",
     "jscs": "^3.0.6",
     "mocha": "^2.2.5",
     "mocha-junit-reporter": "^1.4.0",
     "mocha-multi": "^0.7.1",
     "nodemon": "^1.9.2",
     "npm-run-all": "^1.7.0",
-    "phantomjs-prebuilt": "^2.1.9",
     "pre-commit": "^1.0.10",
     "proxyquire": "^1.5.0",
     "sinomocha": "^0.2.4",
     "sinon": "^1.15.3",
     "sinon-chai": "^2.8.0",
-    "webdriverio": "^4.2.3"
+    "so-acceptance": "^2.0.0"
   },
   "pre-commit": [
     "lint",

@@ -5,7 +5,7 @@ let I;
 module.exports = {
 
   _init() {
-    I = require('../steps.js')();
+    I = require('so-acceptance/steps.js')();
   },
 
   url: 'ref-number',

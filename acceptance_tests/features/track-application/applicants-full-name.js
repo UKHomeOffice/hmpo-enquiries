@@ -30,7 +30,7 @@ Scenario('I see the customer label if I am the customer', function *(
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'false'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   I.see(applicantsFullNamePage.label.customer);
 });
 
@@ -41,7 +41,7 @@ Scenario('I see the representative label if I am the representative', function *
   yield I.setSessionData('track-application', {
     representative: 'true'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   I.see(applicantsFullNamePage.label.representative);
 });
 

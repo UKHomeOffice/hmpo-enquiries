@@ -54,7 +54,7 @@ Scenario('I am taken to the email-address step if I am the customer', function *
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'false'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   refNumberPage.fillFormAndSubmit();
   I.seeInCurrentUrl(emailAddressPage.url);
 });
@@ -67,7 +67,7 @@ Scenario('I am taken to the address step if I am the representative', function *
   yield I.setSessionData(JOURNEY_NAME, {
     representative: 'true'
   });
-  I.refreshPage();
+  yield I.refreshPage();
   refNumberPage.fillFormAndSubmit();
   I.seeInCurrentUrl(addressPage.url);
 });
