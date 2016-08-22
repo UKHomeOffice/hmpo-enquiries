@@ -1,5 +1,10 @@
 {
   "request-declaration": {
-    "header": "Request a replacement declaration form"
+    "header": "Request a replacement declaration form",
+    "replacement": {
+      "download": "If you applied for the passport online, you should have received a declaration form to download and print.",
+      "unable-to-print": "If you were unable to download or print your declaration form, you can request a replacement.",
+      "reference-number": "To use this service you will need the application reference number."
+    }
   }
 }

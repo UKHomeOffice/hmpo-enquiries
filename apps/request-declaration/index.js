@@ -1,10 +1,15 @@
 'use strict';
 
 module.exports = {
-  name: 'request-declaration',
+  baseUrl: '/request-declaration',
   steps: {
-    '/request-declaration': {
-      fields: ['test-text'],
+    '/replacement-form': {
+      next: '/whose-application',
+      locals: {
+        section: 'request-declaration'
+      }
+    },
+    '/whose-application': {
       locals: {
         section: 'request-declaration'
       }
