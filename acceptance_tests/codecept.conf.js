@@ -7,6 +7,7 @@ const relative = relativePath => path.resolve(__dirname, relativePath);
 module.exports = {
   name: 'hmpo-enquiries',
   include: {
+    enquiryTypePage: relative('./pages/enquiry-type.js'),
     applyOnlinePage: relative('./pages/apply-online.js'),
     trackOnlinePage: relative('./pages/track-online.js'),
     whoseApplicationPage: relative('./pages/whose-application.js'),
@@ -17,7 +18,7 @@ module.exports = {
     applicantsDOBPage: relative('./pages/applicants-dob.js'),
     repsFullNamePage: relative('./pages/representatives-full-name.js'),
     relationshipPage: relative('./pages/relationship.js'),
-    enquiryTypePage: relative('./pages/enquiry-type.js'),
-    confirmPage: relative('./pages/confirm.js')
+    confirmPage: relative('./pages/confirm.js'),
+    replacementFormPage: relative('./pages/replacement-form.js')
   }
 };

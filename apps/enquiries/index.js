@@ -13,7 +13,7 @@ module.exports = {
       fields: ['enquiry-type'],
       next: '/track-application/apply-online',
       forks: [{
-        target: '/request-declaration',
+        target: '/request-declaration/replacement-form',
         condition: {
           field: 'enquiry-type',
           value: 'replace'
