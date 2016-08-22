@@ -2,7 +2,7 @@
 
 const JOURNEY_NAME = require('./content').name;
 
-Feature('Apply online step');
+Feature('Request a replacement declaration form / Replacement Form');
 
 Before((
   I,
