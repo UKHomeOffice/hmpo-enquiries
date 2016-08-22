@@ -53,7 +53,7 @@ Scenario('An error is shown if applicants-full-name is not completed', (
   I.seeErrors(applicantsFullNamePage['applicants-full-name']);
 });
 
-Scenario('ON submitting the completed form I am taken to ref-number step', (
+Scenario('On submitting the completed form I am taken to ref-number step', (
   I,
   applicantsFullNamePage,
   refNumberPage

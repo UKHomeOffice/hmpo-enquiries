@@ -9,7 +9,7 @@ Before((
   I,
   relationshipPage,
   repsFullNamePage,
-  applicantsDobPage,
+  applicantsDOBPage,
   addressPage,
   refNumberPage,
   applyOnlinePage,
@@ -22,7 +22,7 @@ Before((
     applicantsFullNamePage,
     refNumberPage,
     addressPage,
-    applicantsDobPage,
+    applicantsDOBPage,
     repsFullNamePage
   ]);
 });
@@ -44,7 +44,7 @@ Scenario('An error is shown if ref-number is not completed', (
   I.seeErrors(relationshipPage.relationship);
 });
 
-Scenario('ON submitting the completed form I am taken to email step', (
+Scenario('On submitting the completed form I am taken to email step', (
   I,
   emailAddressPage,
   relationshipPage
