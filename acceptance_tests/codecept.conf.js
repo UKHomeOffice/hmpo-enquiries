@@ -19,6 +19,7 @@ module.exports = {
     repsFullNamePage: relative('./pages/representatives-full-name.js'),
     relationshipPage: relative('./pages/relationship.js'),
     confirmPage: relative('./pages/confirm.js'),
-    replacementFormPage: relative('./pages/replacement-form.js')
+    replacementFormPage: relative('./pages/replacement-form.js'),
+    sendReplacementPage: relative('./pages/send-replacement.js')
   }
 };
