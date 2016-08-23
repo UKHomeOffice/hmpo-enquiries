@@ -50,10 +50,6 @@ module.exports = {
   'dob-year': {
     validate: ['required', 'numeric']
   },
-  'representatives-full-name': {
-    mixin: 'input-text',
-    validate: ['required']
-  },
   'relationship': {
     mixin: 'input-text',
     validate: ['required']
