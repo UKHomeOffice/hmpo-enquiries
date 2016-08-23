@@ -1,6 +1,6 @@
 'use strict';
 
-const TRANSLATIONS = require('../../apps/track-application/translations/en/default');
+const TRANSLATIONS = require('../translations/en/default');
 const APPLICANTS_FULL_NAME = TRANSLATIONS.fields['applicants-full-name'];
 
 let I;

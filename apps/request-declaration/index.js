@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  name: 'request-declaration',
   baseUrl: '/request-declaration',
   steps: {
     '/replacement-form': {

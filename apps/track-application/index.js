@@ -3,6 +3,7 @@
 const isRep = req => req.sessionModel.get('representative') === 'true';
 
 module.exports = {
+  name: 'track-application',
   baseUrl: '/track-application',
   steps: {
     '/apply-online': {

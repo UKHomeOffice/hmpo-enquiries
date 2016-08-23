@@ -25,10 +25,6 @@ module.exports = {
       label: 'fields.representative.options.true'
     }]
   },
-  'applicants-full-name': {
-    mixin: 'input-text',
-    validate: ['required']
-  },
   'no-ref-number': {
     mixin: 'checkbox'
   },

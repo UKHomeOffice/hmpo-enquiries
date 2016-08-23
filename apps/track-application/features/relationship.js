@@ -1,30 +1,14 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../');
 
 Feature('Track Application / Relationship');
 
-// eslint-disable-next-line max-params
 Before((
   I,
-  relationshipPage,
-  repsFullNamePage,
-  applicantsDOBPage,
-  addressPage,
-  refNumberPage,
-  applyOnlinePage,
-  whoseApplicationPage,
-  applicantsFullNamePage
+  relationshipPage
 ) => {
-  I.visitPage(relationshipPage, JOURNEY_NAME, [
-    applyOnlinePage,
-    whoseApplicationPage,
-    applicantsFullNamePage,
-    refNumberPage,
-    addressPage,
-    applicantsDOBPage,
-    repsFullNamePage
-  ]);
+  I.visitPage(relationshipPage, steps);
 });
 
 Scenario('The correct form elements are present', (
@@ -52,4 +36,3 @@ Scenario('On submitting the completed form I am taken to email step', (
   relationshipPage.fillFormAndSubmit();
   I.seeInCurrentUrl(emailAddressPage.url);
 });
-

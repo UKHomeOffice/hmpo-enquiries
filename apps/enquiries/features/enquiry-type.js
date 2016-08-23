@@ -1,19 +1,20 @@
 'use strict';
 
-Feature('Enquiry Type');
+const steps = require('../');
+const APPLICATION_ENQUIRY = require('../../application-enquiry').name;
+const APPLICATION_PROGRESS = require('../../application-progress').name;
+const CONTACT_US = require('../../contact-us').name;
+const FEEDBACK = require('../../feedback').name;
+const REQUEST_DECLARATION = require('../../request-declaration').name;
+const TRACK_APPLICATION = require('../../track-application').name;
 
-const APPLICATION_ENQUIRY = require('../application-enquiry/content').name;
-const APPLICATION_PROGRESS = require('../application-progress/content').name;
-const CONTACT_US = require('../contact-us/content').name;
-const FEEDBACK = require('../feedback/content').name;
-const REQUEST_DECLARATION = require('../request-declaration/content').name;
-const TRACK_APPLICATION = require('../track-application/content').name;
+Feature('Enquiry Type');
 
 Before((
   I,
   enquiryTypePage
 ) => {
-  I.visitPage(enquiryTypePage);
+  I.visitPage(enquiryTypePage, steps);
 });
 
 Scenario('The correct form elements are present', (

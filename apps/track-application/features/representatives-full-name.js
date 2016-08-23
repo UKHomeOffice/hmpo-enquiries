@@ -1,28 +1,14 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../');
 
 Feature('Track Application / Representatives Full Name');
 
-// eslint-disable-next-line max-params
 Before((
   I,
-  repsFullNamePage,
-  applicantsDOBPage,
-  addressPage,
-  refNumberPage,
-  applicantsFullNamePage,
-  applyOnlinePage,
-  whoseApplicationPage
+  repsFullNamePage
 ) => {
-  I.visitPage(repsFullNamePage, JOURNEY_NAME, [
-    applyOnlinePage,
-    whoseApplicationPage,
-    applicantsFullNamePage,
-    refNumberPage,
-    addressPage,
-    applicantsDOBPage
-  ]);
+  I.visitPage(repsFullNamePage, steps);
 });
 
 Scenario('The correct form elements are present', (

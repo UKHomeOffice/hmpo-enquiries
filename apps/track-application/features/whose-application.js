@@ -1,17 +1,14 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const stepsConfig = require('../');
 
-Feature('Request a replacement declaration form / Whose Application');
+Feature('Whose Application step');
 
 Before((
   I,
-  whoseApplicationPage,
-  replacementFormPage
+  whoseApplicationPage
 ) => {
-  I.visitPage(whoseApplicationPage, JOURNEY_NAME, [
-    replacementFormPage
-  ]);
+  I.visitPage(whoseApplicationPage, stepsConfig);
 });
 
 Scenario('The /whose-application step has a radio button field', (
@@ -33,12 +30,12 @@ Scenario('The /whose-application step shows error message when continuing withou
   I.seeErrors(whoseApplicationPage.representative);
 });
 
-Scenario('When I select any option I am taken to the send-replacement step', (
+Scenario('When any option is selected on the /apply-online step, you are taken to the /applicants-full-name step', (
   I,
   whoseApplicationPage,
-  sendReplacementPage
+  applicantsFullNamePage
 ) => {
   I.checkOption(whoseApplicationPage.false);
   I.submitForm();
-  I.seeInCurrentUrl(sendReplacementPage.url);
+  I.seeInCurrentUrl(applicantsFullNamePage.url);
 });

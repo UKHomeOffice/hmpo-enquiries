@@ -1,24 +1,14 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../');
 
 Feature('Track Application / Email address');
 
-// eslint-disable-next-line max-params
 Before((
   I,
-  emailAddressPage,
-  refNumberPage,
-  applyOnlinePage,
-  whoseApplicationPage,
-  applicantsFullNamePage
+  emailAddressPage
 ) => {
-  I.visitPage(emailAddressPage, JOURNEY_NAME, [
-    applyOnlinePage,
-    whoseApplicationPage,
-    applicantsFullNamePage,
-    refNumberPage
-  ]);
+  I.visitPage(emailAddressPage, steps);
 });
 
 Scenario('The correct form elements are present', (
@@ -34,7 +24,7 @@ Scenario('I see the hint if I am the customer', function *(
   I,
   emailAddressPage
 ) {
-  yield I.setSessionData(JOURNEY_NAME, {
+  yield I.setSessionData(steps.name, {
     representative: 'false'
   });
   yield I.refreshPage();
@@ -45,7 +35,7 @@ Scenario('I dont\'t see the hint if I am the customer', function *(
   I,
   emailAddressPage
 ) {
-  yield I.setSessionData(JOURNEY_NAME, {
+  yield I.setSessionData(steps.name, {
     representative: 'true'
   });
   yield I.refreshPage();
@@ -73,7 +63,7 @@ Scenario('I am taken to the address step if I am a customer', function *(
   emailAddressPage,
   addressPage
 ) {
-  yield I.setSessionData(JOURNEY_NAME, {
+  yield I.setSessionData(steps.name, {
     representative: 'false'
   });
   yield I.refreshPage();
@@ -86,7 +76,7 @@ Scenario('I am taken to the confirm step if I am a representative', function *(
   emailAddressPage,
   confirmPage
 ) {
-  yield I.setSessionData(JOURNEY_NAME, {
+  yield I.setSessionData(steps.name, {
     representative: 'true'
   });
   yield I.refreshPage();

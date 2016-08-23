@@ -1,6 +1,6 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../');
 
 Feature('Request a replacement declaration form / Replacement Form');
 
@@ -8,7 +8,7 @@ Before((
   I,
   replacementFormPage
 ) => {
-  I.visitPage(replacementFormPage, JOURNEY_NAME);
+  I.visitPage(replacementFormPage, steps);
 });
 
 Scenario('On submitting the form I am taken to the whose-application step', (

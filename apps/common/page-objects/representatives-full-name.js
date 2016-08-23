@@ -1,8 +1,5 @@
 'use strict';
 
-const TRANSLATIONS = require('../../apps/track-application/translations/en/default');
-const REPRESENTATIVES_FULL_NAME = TRANSLATIONS.fields['representatives-full-name'];
-
 let I;
 
 module.exports = {
@@ -13,7 +10,6 @@ module.exports = {
 
   url: 'representatives-full-name',
   'representatives-full-name': '#representatives-full-name',
-  label: REPRESENTATIVES_FULL_NAME.label,
   content: 'Barry Dylan',
 
   fillFormAndSubmit() {
