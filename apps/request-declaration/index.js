@@ -25,6 +25,7 @@ module.exports = {
       }
     },
     '/applicants-full-name': {
+      fields: ['applicants-full-name'],
       next: '/ref-number',
       locals: {
         section: 'request-declaration'
