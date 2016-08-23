@@ -22,6 +22,6 @@ module.exports = {
     enquiryTypePage: pagesPath('enquiry-type.js'),
     confirmPage: pagesPath('confirm.js'),
     replacementFormPage: pagesPath('replacement-form.js'),
-    sendReplacementPage: pagesPath('send-replacement.js')
+    howToReceivePage: pagesPath('how-to-receive.js')
   }
 };

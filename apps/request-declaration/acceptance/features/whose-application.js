@@ -30,12 +30,12 @@ Scenario('The /whose-application step shows error message when continuing withou
   I.seeErrors(whoseApplicationPage.representative);
 });
 
-Scenario('When I select any option I am taken to the send-replacement step', (
+Scenario('When I select any option I am taken to the how-to-receive step', (
   I,
   whoseApplicationPage,
-  sendReplacementPage
+  howToReceivePage
 ) => {
   I.checkOption(whoseApplicationPage.false);
   I.submitForm();
-  I.seeInCurrentUrl(sendReplacementPage.url);
+  I.seeInCurrentUrl(howToReceivePage.url);
 });

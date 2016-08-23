@@ -5,5 +5,12 @@
       "true": "Someone else's passport application",
       "false": "My passport application"
     }
+  },
+  "post-replacement": {
+    "legend": "How would you like us to send you a replacement declaration form?",
+    "options": {
+      "true": "Send me a replacement in the post",
+      "false": "Email me a replacement so I can print it myself"
+    }
   }
 }
