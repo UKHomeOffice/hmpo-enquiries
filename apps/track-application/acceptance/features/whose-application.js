@@ -1,6 +1,6 @@
 'use strict';
 
-const stepsConfig = require('../');
+const stepsConfig = require('../../');
 
 Feature('Whose Application step');
 

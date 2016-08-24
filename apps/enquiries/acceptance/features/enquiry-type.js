@@ -1,12 +1,12 @@
 'use strict';
 
-const steps = require('../');
-const APPLICATION_ENQUIRY = require('../../application-enquiry').name;
-const APPLICATION_PROGRESS = require('../../application-progress').name;
-const CONTACT_US = require('../../contact-us').name;
-const FEEDBACK = require('../../feedback').name;
-const REQUEST_DECLARATION = require('../../request-declaration').name;
-const TRACK_APPLICATION = require('../../track-application').name;
+const steps = require('../../');
+const APPLICATION_ENQUIRY = require('../../../application-enquiry').name;
+const APPLICATION_PROGRESS = require('../../../application-progress').name;
+const CONTACT_US = require('../../../contact-us').name;
+const FEEDBACK = require('../../../feedback').name;
+const REQUEST_DECLARATION = require('../../../request-declaration').name;
+const TRACK_APPLICATION = require('../../../track-application').name;
 
 Feature('Enquiry Type');
 

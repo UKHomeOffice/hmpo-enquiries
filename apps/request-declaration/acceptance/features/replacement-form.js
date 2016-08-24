@@ -1,6 +1,6 @@
 'use strict';
 
-const steps = require('../');
+const steps = require('../../');
 
 Feature('Request a replacement declaration form / Replacement Form');
 

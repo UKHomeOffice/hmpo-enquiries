@@ -1,6 +1,6 @@
 'use strict';
 
-const steps = require('../');
+const steps = require('../../');
 
 Feature('Apply online step');
 
