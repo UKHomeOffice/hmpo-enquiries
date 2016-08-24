@@ -4,7 +4,7 @@ const bootstrap = require('hof-bootstrap');
 
 module.exports = bootstrap({
   views: false,
-  fields: false,
+  fields: './apps/common/fields',
   routes: [
     require('./apps/enquiries/'),
     require('./apps/track-application/'),

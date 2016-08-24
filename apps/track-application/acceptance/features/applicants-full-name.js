@@ -1,19 +1,14 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../../');
 
 Feature('Track Application / Applicants Full Name');
 
 Before((
   I,
-  applicantsFullNamePage,
-  applyOnlinePage,
-  whoseApplicationPage
+  applicantsFullNamePage
 ) => {
-  I.visitPage(applicantsFullNamePage, JOURNEY_NAME, [
-    applyOnlinePage,
-    whoseApplicationPage
-  ]);
+  I.visitPage(applicantsFullNamePage, steps);
 });
 
 Scenario('The correct form elements are present', (
@@ -27,7 +22,7 @@ Scenario('I see the customer label if I am the customer', function *(
   I,
   applicantsFullNamePage
 ) {
-  yield I.setSessionData(JOURNEY_NAME, {
+  yield I.setSessionData(steps.name, {
     representative: 'false'
   });
   yield I.refreshPage();
@@ -38,7 +33,7 @@ Scenario('I see the representative label if I am the representative', function *
   I,
   applicantsFullNamePage
 ) {
-  yield I.setSessionData('track-application', {
+  yield I.setSessionData(steps.name, {
     representative: 'true'
   });
   yield I.refreshPage();

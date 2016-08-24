@@ -1,6 +1,6 @@
 'use strict';
 
-const JOURNEY_NAME = require('./content').name;
+const steps = require('../../');
 
 Feature('Apply online step');
 
@@ -8,7 +8,7 @@ Before((
   I,
   applyOnlinePage
 ) => {
-  I.visitPage(applyOnlinePage, JOURNEY_NAME);
+  I.visitPage(applyOnlinePage, steps);
 });
 
 Scenario('The /apply-online step has a radio button field', (

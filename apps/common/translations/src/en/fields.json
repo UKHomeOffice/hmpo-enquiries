@@ -1,0 +1,19 @@
+{
+  "applicants-full-name": {
+    "label": {
+      "representative": {
+        "false": "What's your full name?"
+      },
+      "default": "What's the applicant's full name?"
+    },
+    "hint": {
+      "representative": {
+        "false": "This must be the same as on the application form"
+      },
+      "default": ""
+    }
+  },
+  "representatives-full-name": {
+    "label": "What's your full name?"
+  }
+}

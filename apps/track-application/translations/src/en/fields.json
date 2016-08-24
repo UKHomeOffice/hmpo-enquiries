@@ -13,20 +13,6 @@
       "false": "My passport application"
     }
   },
-  "applicants-full-name": {
-    "label": {
-      "representative": {
-        "false": "What's your full name?"
-      },
-      "default": "What's the applicant's full name?"
-    },
-    "hint": {
-      "representative": {
-        "false": "This must be the same as on the application form"
-      },
-      "default": ""
-    }
-  },
   "ref-number": {
     "label": "What is the application reference number?",
     "hint": "This can be found in the top left on the first page of the application form"

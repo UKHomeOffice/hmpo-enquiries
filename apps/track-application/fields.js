@@ -25,10 +25,6 @@ module.exports = {
       label: 'fields.representative.options.true'
     }]
   },
-  'applicants-full-name': {
-    mixin: 'input-text',
-    validate: ['required']
-  },
   'no-ref-number': {
     mixin: 'checkbox'
   },
@@ -53,10 +49,6 @@ module.exports = {
   },
   'dob-year': {
     validate: ['required', 'numeric']
-  },
-  'representatives-full-name': {
-    mixin: 'input-text',
-    validate: ['required']
   },
   'relationship': {
     mixin: 'input-text',

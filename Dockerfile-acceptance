@@ -8,8 +8,8 @@ RUN wget https://github.com/Medium/phantomjs/releases/download/v2.1.1/${PHANTOM_
     tar xjf ${PHANTOM_JS}.tar.bz2
 
 COPY package.json package.json
-COPY acceptance_tests acceptance_tests/
 COPY test.sh test.sh
+COPY codecept.conf.js codecept.conf.js
 COPY apps apps/
 
 RUN npm --loglevel warn install --ignore-scripts
