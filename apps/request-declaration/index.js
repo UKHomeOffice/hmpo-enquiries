@@ -12,12 +12,13 @@ module.exports = {
     },
     '/whose-application': {
       fields: ['representative'],
-      next: '/send-replacement',
+      next: '/how-to-receive',
       locals: {
         section: 'request-declaration'
       }
     },
-    '/send-replacement': {
+    '/how-to-receive': {
+      fields: ['post-replacement'],
       next: '/applicants-full-name',
       locals: {
         section: 'request-declaration'
