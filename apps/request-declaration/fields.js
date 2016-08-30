@@ -24,9 +24,5 @@ module.exports = {
       value: 'true',
       label: 'fields.post-replacement.options.true'
     }]
-  },
-  'ref-number': {
-    mixin: 'input-text',
-    validate: ['required']
   }
 };
