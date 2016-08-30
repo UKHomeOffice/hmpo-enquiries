@@ -12,14 +12,5 @@
       "true": "Send me a replacement in the post",
       "false": "Email me a replacement so I can print it myself"
     }
-  },
-  "ref-number": {
-    "label": {
-      "representative": {
-        "true": "What's the application reference number?"
-      },
-      "default": "What's your application reference number?"
-    },
-    "hint": "This must be the same as on the application form"
   }
 }
