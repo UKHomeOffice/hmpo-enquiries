@@ -34,9 +34,7 @@ Scenario('I am taken to the email-address step if I am the customer and I have s
   emailAddressPage
 ){
   yield I.setSessionData(steps.name, {
-    representative: 'false'
-  });
-  yield I.setSessionData(steps.name, {
+    representative: 'false',
     'post-replacement': 'false'
   });
   yield I.refreshPage();
@@ -50,9 +48,7 @@ Scenario('I am taken to the address step if I am the customer and I have selecte
   addressPage
 ){
   yield I.setSessionData(steps.name, {
-    representative: 'false'
-  });
-  yield I.setSessionData(steps.name, {
+    representative: 'false',
     'post-replacement': 'true'
   });
   yield I.refreshPage();
