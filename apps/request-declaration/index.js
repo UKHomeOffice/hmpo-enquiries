@@ -1,5 +1,8 @@
 'use strict';
 
+const isRep = req => req.sessionModel.get('representative') === 'true';
+const isPost = req => req.sessionModel.get('post-replacement') === 'true';
+
 module.exports = {
   name: 'request-declaration',
   baseUrl: '/request-declaration',
@@ -32,6 +35,45 @@ module.exports = {
       }
     },
     '/ref-number': {
+      fields: ['ref-number'],
+      next: '/applicants-dob',
+      forks: [{
+        target: '/email-address',
+        condition(req) {
+          return !isPost(req) && !isRep(req);
+        }
+      }, {
+        target: '/address',
+        condition(req) {
+          return isPost(req) && !isRep(req);
+        }
+      }],
+      locals: {
+        section: 'request-declaration'
+      }
+    },
+    '/email-address': {
+    },
+    '/address': {
+    },
+    '/applicants-dob': {
+      next: '/representatives-full-name',
+      locals: {
+        section: 'request-declaration'
+      }
+    },
+    '/representatives-full-name': {
+      next: '/relationship',
+      locals: {
+        section: 'request-declaration'
+      }
+    },
+    '/relationship': {
+      next: '/email-address',
+      forks: [{
+        target: '/address',
+        condition: isPost
+      }],
       locals: {
         section: 'request-declaration'
       }
