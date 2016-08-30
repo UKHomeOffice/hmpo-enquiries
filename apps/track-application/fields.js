@@ -36,10 +36,6 @@ module.exports = {
       value: ''
     }
   },
-  'email-address': {
-    mixin: 'input-text',
-    validate: ['required', 'email']
-  },
   'dob': {},
   'dob-day': {
     validate: ['required', 'numeric']

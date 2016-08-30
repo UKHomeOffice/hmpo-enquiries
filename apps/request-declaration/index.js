@@ -53,6 +53,11 @@ module.exports = {
       }
     },
     '/email-address': {
+      fields: ['email-address'],
+      next: '/confirm',
+      locals: {
+        section: 'request-declaration'
+      }
     },
     '/address': {
     },
@@ -77,6 +82,8 @@ module.exports = {
       locals: {
         section: 'request-declaration'
       }
+    },
+    '/confirm': {
     }
   }
 };
