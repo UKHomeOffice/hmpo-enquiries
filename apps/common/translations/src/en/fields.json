@@ -15,5 +15,14 @@
   },
   "representatives-full-name": {
     "label": "What's your full name?"
+  },
+  "email-address": {
+    "label": "What's your email address?",
+    "hint": {
+      "representative": {
+        "false": "This must be the same as on the application form"
+      },
+      "default": ""
+    }
   }
 }
