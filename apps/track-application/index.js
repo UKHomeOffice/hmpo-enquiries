@@ -64,6 +64,7 @@ module.exports = {
     },
     '/applicants-dob': {
       controller: require('./controllers/applicants-dob'),
+      template: '../common/views/applicants-dob.html',
       fields: [
         'dob',
         'dob-day',

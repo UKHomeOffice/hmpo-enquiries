@@ -57,6 +57,7 @@ module.exports = {
     '/address': {
     },
     '/applicants-dob': {
+
       next: '/representatives-full-name',
       locals: {
         section: 'request-declaration'

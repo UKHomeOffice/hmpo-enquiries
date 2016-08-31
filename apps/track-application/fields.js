@@ -40,16 +40,6 @@ module.exports = {
     mixin: 'input-text',
     validate: ['required', 'email']
   },
-  'dob': {},
-  'dob-day': {
-    validate: ['required', 'numeric']
-  },
-  'dob-month': {
-    validate: ['required', 'numeric']
-  },
-  'dob-year': {
-    validate: ['required', 'numeric']
-  },
   'relationship': {
     mixin: 'input-text',
     validate: ['required']

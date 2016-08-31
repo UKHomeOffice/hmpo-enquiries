@@ -15,5 +15,18 @@
   },
   "representatives-full-name": {
     "label": "What's your full name?"
+  },
+  "dob": {
+    "legend": "What is the applicant's date of birth?",
+    "hint": "(DD/MM/YYYY)"
+  },
+  "dob-day": {
+    "label": " "
+  },
+  "dob-month": {
+    "label": " "
+  },
+  "dob-year": {
+    "label": " "
   }
 }

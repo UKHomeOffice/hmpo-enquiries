@@ -9,4 +9,14 @@ module.exports = {
     mixin: 'input-text',
     validate: ['required']
   },
+  'dob': {},
+  'dob-day': {
+    validate: ['required', 'numeric']
+  },
+  'dob-month': {
+    validate: ['required', 'numeric']
+  },
+  'dob-year': {
+    validate: ['required', 'numeric']
+  }
 };
