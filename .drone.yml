@@ -41,6 +41,11 @@ pipeline:
       event: pull_request
 
 services:
+  phantomjs:
+    image: wernight/phantomjs:2.1.1
+    command:
+      - "--webdriver"
+      - "4444"
   redis:
     image: redis
   dind:
