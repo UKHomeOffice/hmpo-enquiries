@@ -68,6 +68,9 @@ module.exports = {
       }
     },
     '/representatives-full-name': {
+      fields: [
+        'representatives-full-name'
+      ],
       next: '/relationship',
       locals: {
         section: 'request-declaration'
