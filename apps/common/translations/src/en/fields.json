@@ -24,5 +24,8 @@
       },
       "default": ""
     }
+  },
+  "relationship": {
+    "label": "What's your relationship to the applicant?"
   }
 }

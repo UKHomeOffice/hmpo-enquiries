@@ -74,6 +74,9 @@ module.exports = {
       }
     },
     '/relationship': {
+      fields: [
+        'relationship'
+      ],
       next: '/email-address',
       forks: [{
         target: '/address',

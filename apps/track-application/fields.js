@@ -45,9 +45,5 @@ module.exports = {
   },
   'dob-year': {
     validate: ['required', 'numeric']
-  },
-  'relationship': {
-    mixin: 'input-text',
-    validate: ['required']
   }
 };
