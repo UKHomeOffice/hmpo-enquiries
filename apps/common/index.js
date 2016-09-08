@@ -15,5 +15,10 @@ module.exports = {
     fields: [
       'email-address'
     ]
+  },
+  '/relationship': {
+    fields: [
+      'relationship'
+    ]
   }
 };

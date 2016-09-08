@@ -11,11 +11,11 @@ Before((
   I.visitPage(relationshipPage, steps);
 });
 
-Scenario('On submitting the completed form I am taken to email step', (
+Scenario('On submitting the completed form I am taken to email step', function *(
   I,
   emailAddressPage,
   relationshipPage
-) => {
+) {
   yield I.setSessionData(steps.name, {
     representative: 'true',
     'post-replacement': 'false'
@@ -25,11 +25,11 @@ Scenario('On submitting the completed form I am taken to email step', (
   I.seeInCurrentUrl(emailAddressPage.url);
 });
 
-Scenario('On submitting the completed form I am taken to address step', (
+Scenario('On submitting the completed form I am taken to address step', function *(
   I,
   addressPage,
   relationshipPage
-) => {
+) {
   yield I.setSessionData(steps.name, {
     representative: 'true',
     'post-replacement': 'true'
