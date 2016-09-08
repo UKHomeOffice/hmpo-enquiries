@@ -22,7 +22,11 @@ module.exports = {
     mixin: 'textarea',
     validate: ['required'],
     'ignore-defaults': true,
-    formatter: ['trim', 'hyphens']
+    formatter: ['trim', 'hyphens'],
+    attributes: [{
+      attribute: 'height',
+      value: 6
+    }]
   },
   'address-lookup': {
     className: ['address'],

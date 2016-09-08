@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const path = require('path');
 const bootstrap = require('hof-bootstrap');
 const config = require('./config.js');
 const mockPostcode = require('./mock-postcode.js');
@@ -16,8 +17,8 @@ const routes = [
 ];
 
 const options = {
-  views: './apps/common/views',
-  fields: './apps/common/fields',
+  views: path.resolve(__dirname, './apps/common/views'),
+  fields: path.resolve(__dirname, './apps/common/fields'),
   routes
 };
 
