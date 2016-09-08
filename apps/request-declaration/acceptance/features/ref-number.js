@@ -59,12 +59,12 @@ Scenario('I am taken to the address step if I am the customer and I have selecte
 Scenario('I am taken to the applicants-dob step if I am the representative', function *(
   I,
   refNumberPage,
-  applicantsDobPage
+  applicantsDOBPage
 ){
   yield I.setSessionData(steps.name, {
     representative: 'true'
   });
   yield I.refreshPage();
   refNumberPage.fillFormAndSubmit()
-  I.seeInCurrentUrl(applicantsDobPage.url);
+  I.seeInCurrentUrl(applicantsDOBPage.url);
 });

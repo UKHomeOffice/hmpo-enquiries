@@ -24,5 +24,12 @@
       },
       "default": ""
     }
+  },
+  "representative": {
+    "legend": "Whose passport application is your enquiry about?",
+    "options": {
+      "true": "Someone else's passport application",
+      "false": "My passport application"
+    }
   }
 }

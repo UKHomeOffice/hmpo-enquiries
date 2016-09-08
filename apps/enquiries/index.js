@@ -19,7 +19,7 @@ module.exports = {
           value: 'replace'
         }
       }, {
-        target: '/application-progress',
+        target: '/application-progress/whose-application',
         condition: {
           field: 'enquiry-type',
           value: 'progress'

@@ -6,13 +6,6 @@
       "no": "No"
     }
   },
-  "representative": {
-    "legend": "Whose passport application is your enquiry about?",
-    "options": {
-      "true": "Someone else's passport application",
-      "false": "My passport application"
-    }
-  },
   "ref-number": {
     "label": "What is the application reference number?",
     "hint": "This can be found in the top left on the first page of the application form"
