@@ -7,13 +7,13 @@ const url = require('url');
 module.exports = class PostcodesModel extends Model {
   fetch(postcode) {
     return new Promise((resolve, reject) => {
-      const options = Object.assign({}, {
+      const postcodeAPI = {
         url: config.postcode.hostname + config.postcode.addresses.path,
         query: {
-          postcode: postcode
+          postcode
         }
-      });
-      const reqConf = url.parse(this.url(options));
+      };
+      const reqConf = url.parse(this.url(postcodeAPI));
 
       reqConf.method = 'GET';
       reqConf.headers = {
