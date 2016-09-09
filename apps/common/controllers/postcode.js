@@ -24,7 +24,7 @@ module.exports = class PostcodeController extends BaseController {
     }
 
     const postcodesModel = new PostcodesModel();
-    postcodesModel.fetch({postcode})
+    postcodesModel.fetch(postcode)
       .then(data => {
         if (data.length) {
           req.sessionModel.set('addresses', data);

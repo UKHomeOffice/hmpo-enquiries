@@ -5,13 +5,12 @@ const config = require('../../../config');
 const url = require('url');
 
 module.exports = class PostcodesModel extends Model {
-  fetch(options) {
-    options = options || {};
+  fetch(postcode) {
     return new Promise((resolve, reject) => {
-      options = Object.assign({}, options, {
-        url: options.url || config.postcode.hostname + config.postcode.addresses.path,
+      const options = Object.assign({}, {
+        url: config.postcode.hostname + config.postcode.addresses.path,
         query: {
-          postcode: options.postcode
+          postcode: postcode
         }
       });
       const reqConf = url.parse(this.url(options));
