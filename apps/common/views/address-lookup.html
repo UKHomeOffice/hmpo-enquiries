@@ -1,0 +1,17 @@
+{{<partials-page}}
+  {{$page-content}}
+    <label>
+      {{#t}}fields.postcode-code.label{{/t}}
+    </label>
+    <p>
+      <span class="postcode">{{values.postcode-code}}</span>
+      <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
+    </p>
+
+    {{#select}}address-lookup{{/select}}
+
+    <p><span id="cant-find" class="link"><a href="{{baseUrl}}/address">{{#t}}pages.address.cantfind{{/t}}</a></span></p>
+
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}

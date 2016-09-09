@@ -24,5 +24,20 @@
       },
       "default": ""
     }
+  },
+  "postcode-code": {
+    "label": "Postcode",
+    "hint": "This must be the same as on the application form"
+  },
+  "address-lookup": {
+    "label": {
+      "representative": {
+        "false": "Select your address"
+      },
+      "default": "Select the applicant's address"
+    }
+  },
+  "address-manual": {
+    "label": "Address"
   }
 }

@@ -11,17 +11,17 @@ Before((
   I.visitPage(emailAddressPage, steps);
 });
 
-Scenario('I am taken to the address step if I am a customer', function *(
+Scenario('I am taken to the postcode step if I am a customer', function *(
   I,
   emailAddressPage,
-  addressPage
+  postcodePage
 ) {
   yield I.setSessionData(steps.name, {
     representative: 'false'
   });
   yield I.refreshPage();
   emailAddressPage.fillFormAndSubmit(emailAddressPage.content.valid);
-  I.seeInCurrentUrl(addressPage.url);
+  I.seeInCurrentUrl(postcodePage.url);
 });
 
 Scenario('I am taken to the confirm step if I am a representative', function *(

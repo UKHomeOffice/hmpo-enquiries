@@ -5,6 +5,7 @@ const isRep = req => req.sessionModel.get('representative') === 'true';
 module.exports = {
   name: 'track-application',
   baseUrl: '/track-application',
+  params: '/:action?',
   steps: {
     '/apply-online': {
       fields: ['apply-online'],
@@ -46,7 +47,7 @@ module.exports = {
       ],
       next: '/email-address',
       forks: [{
-        target: '/address',
+        target: '/postcode',
         condition: isRep
       }],
       locals: {
@@ -77,7 +78,7 @@ module.exports = {
     },
     '/email-address': {
       fields: ['email-address'],
-      next: '/address',
+      next: '/postcode',
       forks: [{
         target: '/confirm',
         condition: isRep
@@ -86,12 +87,57 @@ module.exports = {
         section: 'track-application'
       }
     },
-    '/address': {
+    '/postcode': {
+      controller: require('../common/controllers/postcode'),
+      fields: [
+        'postcode-code'
+      ],
+      forks: [{
+        target: '/address-lookup',
+        condition(req) {
+          const addresses = req.sessionModel.get('addresses');
+          return addresses && addresses.length;
+        }
+      }],
+      continueOnEdit: true,
+      next: '/address',
+      locals: {
+        section: 'track-application',
+        subsection: 'address'
+      }
+    },
+    '/address-lookup': {
+      controller: require('../common/controllers/address-lookup'),
+      fields: [
+        'address-lookup'
+      ],
+      continueOnEdit: true,
       next: '/confirm',
       forks: [{
         target: '/applicants-dob',
         condition: isRep
-      }]
+      }],
+      locals: {
+        section: 'track-application',
+        subsection: 'address'
+      }
+    },
+    '/address': {
+      controller: require('../common/controllers/address'),
+      fields: [
+        'address-manual'
+      ],
+      next: '/confirm',
+      prereqs: ['/postcode', '/email-address', '/ref-number'],
+      backLinks: ['postcode'],
+      forks: [{
+        target: '/applicants-dob',
+        condition: isRep
+      }],
+      locals: {
+        section: 'track-application',
+        subsection: 'address'
+      }
     },
     '/relationship': {
       fields: [

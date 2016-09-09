@@ -12,5 +12,23 @@ module.exports = {
   'email-address': {
     mixin: 'input-text',
     validate: ['required', 'email']
+  },
+  'postcode-code': {
+    mixin: 'input-text-code',
+    validate: ['required', 'postcode'],
+    formatter: 'uppercase'
+  },
+  'address-manual': {
+    mixin: 'textarea',
+    validate: ['required'],
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
+    attributes: [{
+      attribute: 'height',
+      value: 6
+    }]
+  },
+  'address-lookup': {
+    className: ['address'],
   }
 };

@@ -52,15 +52,15 @@ Scenario('I am taken to the email-address step if I am the customer', function *
   I.seeInCurrentUrl(emailAddressPage.url);
 });
 
-Scenario('I am taken to the address step if I am the representative', function *(
+Scenario('I am taken to the postcode step if I am the representative', function *(
   I,
   refNumberPage,
-  addressPage
+  postcodePage
 ) {
   yield I.setSessionData(steps.name, {
     representative: 'true'
   });
   yield I.refreshPage();
   refNumberPage.fillFormAndSubmit();
-  I.seeInCurrentUrl(addressPage.url);
+  I.seeInCurrentUrl(postcodePage.url);
 });

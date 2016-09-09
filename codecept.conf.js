@@ -15,7 +15,7 @@ module.exports = {
     applicantsFullNamePage: pagesPath('applicants-full-name.js'),
     refNumberPage: pagesPath('ref-number.js'),
     emailAddressPage: pagesPath('email-address.js'),
-    addressPage: pagesPath('address.js'),
+    postcodePage: pagesPath('postcode.js'),
     applicantsDobPage: pagesPath('applicants-dob.js'),
     repsFullNamePage: pagesPath('representatives-full-name.js'),
     relationshipPage: pagesPath('relationship.js'),

@@ -41,3 +41,14 @@ h1 {
 .form-label-bold {
   @include core-19;
 }
+
+select.address {
+  border: 1px solid #aaa;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 19px;
+}
+
+span.postcode {
+  font-weight: bold;
+  margin-right: 0.5em;
+}

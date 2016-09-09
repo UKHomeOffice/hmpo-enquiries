@@ -45,7 +45,7 @@ Scenario('I am taken to the email-address step if I am the customer and I have s
 Scenario('I am taken to the address step if I am the customer and I have selected post on how-to-receive', function *(
   I,
   refNumberPage,
-  addressPage
+  postcodePage
 ){
   yield I.setSessionData(steps.name, {
     representative: 'false',
@@ -53,7 +53,7 @@ Scenario('I am taken to the address step if I am the customer and I have selecte
   });
   yield I.refreshPage();
   refNumberPage.fillFormAndSubmit()
-  I.seeInCurrentUrl(addressPage.url);
+  I.seeInCurrentUrl(postcodePage.url);
 });
 
 Scenario('I am taken to the applicants-dob step if I am the representative', function *(
