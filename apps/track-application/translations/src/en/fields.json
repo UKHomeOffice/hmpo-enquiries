@@ -33,9 +33,6 @@
   "dob-year": {
     "label": " "
   },
-  "representatives-full-name": {
-    "label": "What's your full name?"
-  },
   "relationship": {
     "label": "What's your relationship to the applicant?"
   }
