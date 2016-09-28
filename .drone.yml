@@ -80,9 +80,9 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker login -u="ukhomeofficedigital+ukvi_complaints" -p=${DOCKER_PASSWORD} quay.io
-      - docker tag app quay.io/ukhomeofficedigital/ukvi-complaints:${DRONE_COMMIT_SHA}
-      - docker push quay.io/ukhomeofficedigital/ukvi-complaints:${DRONE_COMMIT_SHA}
+      - docker login -u="ukhomeofficedigital+hmpo-enquiries" -p=${DOCKER_PASSWORD} quay.io
+      - docker tag app quay.io/ukhomeofficedigital/hmpo-enquiries:${DRONE_COMMIT_SHA}
+      - docker push quay.io/ukhomeofficedigital/hmpo-enquiries:${DRONE_COMMIT_SHA}
     when:
       branch: master
       event: push
@@ -90,10 +90,10 @@ pipeline:
   trigger_deploy_to_dev:
     image: quay.io/ukhomeofficedigital/drone-trigger:latest
     drone_server: https://drone.digital.homeoffice.gov.uk
-    repo: UKHomeOffice/kube-ukvi-complaints
+    repo: UKHomeOffice/kube-hmpo-enquiries
     branch: master
-    deploy_to: ukvi-complaints-dev
-    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=ukvi-complaints-dev
+    deploy_to: hmpo-enquiries-dev
+    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=hmpo-enquiries-dev
     when:
       branch: master
       event: push
@@ -101,10 +101,10 @@ pipeline:
   trigger_deploy_to_preprod:
     image: quay.io/ukhomeofficedigital/drone-trigger:latest
     drone_server: https://drone.digital.homeoffice.gov.uk
-    repo: UKHomeOffice/kube-ukvi-complaints
+    repo: UKHomeOffice/kube-hmpo-enquiries
     branch: master
-    deploy_to: ukvi-complaints-preprod
-    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=ukvi-complaints-preprod
+    deploy_to: hmpo-enquiries-preprod
+    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=hmpo-enquiries-preprod
     when:
       event: tag
 
