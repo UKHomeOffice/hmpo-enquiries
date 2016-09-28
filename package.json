@@ -1,5 +1,5 @@
 {
-  "name": "HMPO-Passport-Enquiries",
+  "name": "hmpo-enquiries",
   "version": "0.1.0",
   "main": "app.js",
   "description": "HMPO Passport Enquiries form",
